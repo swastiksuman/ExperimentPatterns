@@ -8,13 +8,11 @@ public class MySqlConnectionFactory implements ConnectionsFactory{
 
 	@Override
 	public  Connections getConnection() {
-		// TODO Auto-generated method stub
 		return new ConnectMySql();
 	}
 
 	@Override
 	public Connections destroyConnection() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

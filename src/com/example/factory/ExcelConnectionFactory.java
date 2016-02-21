@@ -8,13 +8,11 @@ public class ExcelConnectionFactory implements ConnectionsFactory{
 	
 	@Override
 	public Connections getConnection() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
 	public Connections destroyConnection() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 

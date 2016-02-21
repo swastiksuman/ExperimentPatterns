@@ -17,18 +17,21 @@ public class ConnectMySql implements Connections{
 			Class.forName("com.mysql.jdbc.Driver");
 			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila","root","elnino"); 
 		} catch (ClassNotFoundException | SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
 	
 	@Override
 	public Connection connectToDB() {
-		// TODO Auto-generated method stub
 		return connection;
 	}
 	
 	public ResultSet executeQuery(String statement){
 		return null;
+	}
+
+	@Override
+	public void flushConnection() {
+		connection = null;
 	}
 }

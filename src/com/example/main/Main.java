@@ -18,10 +18,13 @@ public class Main {
 			System.out.println("FirstName: "+actor.getFirstNaame()+" LastName: "+actor.getLastName());
 		}*/
 
-		FilmDao films = new FilmDaoImpl();
+		/*FilmDao films = new FilmDaoImpl();
 		List<Film> filmNames = films.getAllFilms();
 		for(Film film:filmNames){
 			System.out.println("Film Name: "+film.getTitle()+"Release Year: "+film.getRelease_year()+"Year: "+film.getRating());
-		}
+		}*/
+		ActorDao actors = new ActorDaoImpl();
+		Actor actor = actors.getActor(32222);
+		System.out.println("First Name: "+actor.getFirstNaame()+" Last Name: "+actor.getLastName());
 	}
 }
