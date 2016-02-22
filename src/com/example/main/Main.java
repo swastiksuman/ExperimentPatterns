@@ -24,7 +24,7 @@ public class Main {
 			System.out.println("Film Name: "+film.getTitle()+"Release Year: "+film.getRelease_year()+"Year: "+film.getRating());
 		}*/
 		ActorDao actors = new ActorDaoImpl();
-		Actor actor = actors.getActor(32222);
+		Actor actor = actors.getActor(3);
 		System.out.println("First Name: "+actor.getFirstNaame()+" Last Name: "+actor.getLastName());
 	}
 }

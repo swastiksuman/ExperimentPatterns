@@ -53,6 +53,9 @@ public class ActorDaoImpl implements ActorDao{
 		try{
 			statement = connection.createStatement();
 			ResultSet rs = statement.executeQuery("Select first_name, last_name from actor where actor_id="+actorID);
+			if(rs.next()){
+				
+			}
 			System.out.println(rs.first());
 			actor= new Actor(rs.getObject(1).toString(), rs.getObject(2).toString());
 		}catch (SQLException e) {
@@ -65,6 +68,7 @@ public class ActorDaoImpl implements ActorDao{
 	@Override
 	public void updateActor(int actorID) {
 		// TODO Auto-generated method stub
+		
 		
 	}
 
