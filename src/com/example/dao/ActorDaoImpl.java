@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,12 +50,13 @@ public class ActorDaoImpl implements ActorDao{
 		// TODO Auto-generated method stub
 		connectDB = new MySqlConnectionFactory();
 		Connection connection = connectDB.getConnection().connectToDB();
-		Statement statement;
+		PreparedStatement statement;
 		try{
-			statement = connection.createStatement();
-			ResultSet rs = statement.executeQuery("Select first_name, last_name from actor where actor_id="+actorID);
+			statement = connection.prepareStatement("Select first_name, last_name from actor where actor_id=?");
+			statement.setInt(1, actorID);
+			ResultSet rs = statement.executeQuery();
 			if(rs.next()){
-				
+					
 			}
 			System.out.println(rs.first());
 			actor= new Actor(rs.getObject(1).toString(), rs.getObject(2).toString());
